@@ -6,13 +6,10 @@ class Deck {
 
     public Deck() { 
 
-        for (int i = 1; i <= 4; i++) {
+  
+        for (int i = 1; i <= 13; i++) { 
 
-            for (int j = 1; j <= 13; j++) { 
-
-                cards.Add(j.ToString());
-
-            }
+            cards.Add(i.ToString());
 
         }
 
@@ -34,10 +31,6 @@ class Deck {
         int index = random.Next(cards.Count);
 
         string card = cards[index];
-
-        cards.RemoveAt(index);
-
-        Console.WriteLine(card);
 
         return card; 
 
