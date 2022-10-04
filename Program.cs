@@ -36,14 +36,14 @@ while (gameOn) {
 
     score.DisplayScore();
 
-    Console.Write("Play again? [y/n] ");
+    // Console.Write("Play again? [y/n] ");
 
-    string playAgain = Console.ReadLine();
+    // string? playAgain = Console.ReadLine();
 
-    if (playAgain == "n") {
-        gameOn = false; 
-        Console.WriteLine("Game over, thanks for playing!");
-    }
+    // if (playAgain == "n") {
+    //     gameOn = false; 
+    //     Console.WriteLine("Game over, thanks for playing!");
+    // }
 
     if (score.IsGameOver()) {
 
