@@ -8,6 +8,8 @@ Score score = new Score();
 
 bool gameOn = true;
 
+int numGuesses = 0;
+
 while (gameOn) {
 
 
@@ -36,6 +38,8 @@ while (gameOn) {
 
     score.DisplayScore();
 
+    numGuesses++;
+
     // Console.Write("Play again? [y/n] ");
 
     // string? playAgain = Console.ReadLine();
@@ -55,6 +59,8 @@ while (gameOn) {
 
 
 }
+
+Console.WriteLine($"You made {numGuesses} guesses"); 
 
 
 
