@@ -8,7 +8,7 @@ class Score {
 
     }
 
-    public bool TestPlayerGuess(string guess, string currentCard, string nextCard) {
+    public string TestPlayerGuess(string guess, string currentCard, string nextCard) {
 
         int intCurrentCard = int.Parse(currentCard);
 
@@ -17,18 +17,24 @@ class Score {
 
         if (intCurrentCard < intNextCard && guess == "h") {
 
-            return true;
+            return "correct";
 
         }
 
         else if (intCurrentCard > intNextCard && guess == "l") {
 
-            return true; 
+            return "correct"; 
+
+        }
+
+        else if (intCurrentCard == intNextCard) {
+
+            return "tie";
 
         }
 
         else {
-            return false;
+            return "wrong";
         }
     }
 

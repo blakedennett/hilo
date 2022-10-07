@@ -7,9 +7,13 @@ class Deck {
     public Deck() { 
 
   
-        for (int i = 1; i <= 13; i++) { 
+        for (int i = 1; i <= 1000; i++) { 
 
-            cards.Add(i.ToString());
+            var random = new Random();
+
+            int index = random.Next(13);
+
+            cards.Add(index.ToString());
 
         }
 
@@ -26,11 +30,21 @@ class Deck {
 
     public string DrawCard() {
 
-        var random = new Random();
+        int cardsLength = cards.Count;
 
-        int index = random.Next(cards.Count);
+        string card = cards[cardsLength - 1];
 
-        string card = cards[index];
+        cards.RemoveAt(cards.Count - 1);
+
+        return card; 
+
+    }
+
+    public string DrawNextCard() {
+
+        int cardsLength = cards.Count;
+
+        string card = cards[cardsLength - 1];
 
         return card; 
 

@@ -21,14 +21,14 @@ while (gameOn) {
 
     string? guess = Console.ReadLine();
 
-    string nextCard = deck.DrawCard();
+    string nextCard = deck.DrawNextCard();
 
-    if (score.TestPlayerGuess(guess, currentCard, nextCard)) {
+    if (score.TestPlayerGuess(guess, currentCard, nextCard) == "correct") {
 
         score.CorrectGuessReward();
 
     } 
-    else {
+    else if (score.TestPlayerGuess(guess, currentCard, nextCard) == "wrong") {
 
         score.WrongGuessPunishment();
 
@@ -40,14 +40,14 @@ while (gameOn) {
 
     numGuesses++;
 
-    // Console.Write("Play again? [y/n] ");
+    Console.Write("Play again? [y/n] ");
 
-    // string? playAgain = Console.ReadLine();
+    string? playAgain = Console.ReadLine();
 
-    // if (playAgain == "n") {
-    //     gameOn = false; 
-    //     Console.WriteLine("Game over, thanks for playing!");
-    // }
+    if (playAgain == "n") {
+        gameOn = false; 
+        Console.WriteLine("Game over, thanks for playing!");
+    }
 
     if (score.IsGameOver()) {
 
