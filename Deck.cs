@@ -11,11 +11,12 @@ class Deck {
 
             var random = new Random();
 
-            int index = random.Next(13);
+            int index = random.Next(1, 14);
 
             cards.Add(index.ToString());
 
         }
+        
 
     }
 
